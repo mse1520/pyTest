@@ -1,20 +1,35 @@
 1. venv
     프로젝트별로 독립된 가상 환경을 제공합니다(npm init과 비슷)
-    py -m venv .venv > 가상환경을 생성합니다
-    .\venv\Scripts\activate >
+    python -m venv venv -> 가상환경을 생성합니다
+    .\venv\Scripts\activate ->
         venv 폴더 생성후 생성한 폴더의 운영 환경에 맞는 activate를 실행합니다
     deactivate > 실행된 가상환경을 비활성화 합니다
-
 
 2. 윈도우에서 powershell로 실행시 venv가 실행되지 않는 현상 해결법
     파워쉘의 스크립트 실행정책을 변경해야 venv를 사용할 수 있습니다
     기본값은 Restricted 입니다
-    Set-ExecutionPolicy RemoteSigned > 파워쉘 실행 정책을 'RemoteSigned'으로 변경
-    Get-ExecutionPolicy > 현재 파워쉘의 실행 정책을 확인
+    Set-ExecutionPolicy RemoteSigned -> 파워쉘 실행 정책을 'RemoteSigned'으로 변경
+    Get-ExecutionPolicy -> 현재 파워쉘의 실행 정책을 확인
 
 3. dependency 파일 만들기(requirements.txt)
-    pip freeze > requirements.txt > 
+    pip freeze > requirements.txt ->
         현재 적용되어있는 모든 패키지 목록을 requirements.txt 파일에 정리합니다
         마치 npm에 package.json의 dependencys와 동일
-    pip install -r requirements.txt >
+    pip install -r requirements.txt ->
         requirements.txt 파일의 모든 종속 패키지 목록을 설치합니다
+
+4. 패키지 설명
+    flask -> 웹프레임워크
+    flask-cors -> cors 미들웨어
+    flask-restx -> restfull api 작성을 돕는 미들웨어
+    psycopg2 -> postgresql database 패키지
+    numpy -> 행렬 관련 유틸 패키지
+
+5. 명령어
+    python ./app.py -> main에 작성된 web server를 실행합니다
+    autopep8 --in-place --max-line-length=160 --aggressive --aggressive <filename> ->
+        python formatting 패키지
+        <filename>의 포맷팅을 실행합니다
+        --in-place -> 포맷팅한 내용으로 파일을 즉각 변경
+        --max-line-length n -> 코드 최대길이
+        -a --aggressive -> 빈문자열 제거 옵션, 두번 적용시 강력 옵션
